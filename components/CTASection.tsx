@@ -27,7 +27,7 @@ export default function CTASection() {
             Join Spacor Sports as an athlete, partner, investor, media organization or sports enthusiast.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col lg:flex-row gap-4 justify-center items-center">
             <Link href="/contact">
               <motion.button
                 whileHover={{ scale: 1.05 }}

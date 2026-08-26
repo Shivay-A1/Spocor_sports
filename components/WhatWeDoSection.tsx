@@ -39,7 +39,7 @@ const services: Service[] = [
 
 export default function WhatWeDoSection() {
   return (
-    <section className="py-6 lg:py-10 bg-[#FFFFFF]">
+    <section className="pt-12 lg:pt-16 pb-6 lg:pb-10 bg-[#FFFFFF]">
       <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
         {/* Heading */}
         <motion.div

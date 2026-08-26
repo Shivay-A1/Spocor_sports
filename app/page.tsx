@@ -154,7 +154,7 @@ export default function Home() {
             </div>
 
             <div className="absolute inset-0 flex items-start z-10">
-              <div className="w-full px-4 pt-12">
+              <div className="w-full px-4 pt-16">
                 <motion.div
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -165,7 +165,7 @@ export default function Home() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-[#FF5A00] font-semibold mb-2 uppercase tracking-wider text-[10px]"
+                    className="text-[#FF5A00] font-semibold mb-2 uppercase tracking-wider text-xs"
                   >
                     ONE VISION. LIMITLESS POSSIBILITIES.
                   </motion.p>
@@ -174,7 +174,7 @@ export default function Home() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-lg md:text-xl font-bold text-[#FFFFFF] mb-2 leading-tight"
+                    className="text-xl md:text-2xl font-bold text-[#FFFFFF] mb-2 leading-tight"
                   >
                     BUILDING THE FUTURE OF <span className="text-[#FF5A00]">SPORTS</span>
                   </motion.h1>
@@ -183,7 +183,7 @@ export default function Home() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-[10px] text-[#E7E7E7] mb-3 leading-relaxed"
+                    className="text-xs text-[#E7E7E7] mb-3 leading-relaxed"
                   >
                     Spacor Sports is dedicated to creating world-class leagues that inspire, empower and elevate athletes across the globe.
                   </motion.p>
@@ -198,7 +198,7 @@ export default function Home() {
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-[#FF5A00] text-[#FFFFFF] px-3 py-1.5 rounded-full font-semibold hover:bg-[#FF6A00] transition-colors text-[10px]"
+                        className="bg-[#FF5A00] text-[#FFFFFF] px-3 py-1.5 rounded-full font-semibold hover:bg-[#FF6A00] transition-colors text-xs"
                       >
                         EXPLORE OUR LEAGUES
                       </motion.button>
@@ -207,7 +207,7 @@ export default function Home() {
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-transparent border-2 border-[#FF5A00] text-[#FF5A00] px-3 py-1.5 rounded-full font-semibold hover:bg-[#FF5A00]/10 transition-colors flex items-center justify-center gap-2 text-[10px]"
+                        className="bg-transparent border-2 border-[#FF5A00] text-[#FF5A00] px-3 py-1.5 rounded-full font-semibold hover:bg-[#FF5A00]/10 transition-colors flex items-center justify-center gap-2 text-xs"
                       >
                         ABOUT SPACOR
                         <ArrowRight size={12} />
@@ -241,7 +241,7 @@ export default function Home() {
       <EcosystemSection />
 
       {/* Our Leagues Heading Section */}
-      <section className="hidden lg:block py-0 bg-[#FFFFFF]">
+      <section className="py-6 lg:py-0 bg-[#FFFFFF]">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -250,10 +250,10 @@ export default function Home() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-center"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#151515] mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-[#151515] mb-3 lg:mb-4">
               OUR LEAGUES
             </h2>
-            <p className="text-[#666666] text-base lg:text-xl">
+            <p className="text-sm md:text-base lg:text-xl text-[#666666]">
               Creating platforms where sport becomes opportunity
             </p>
           </motion.div>
@@ -276,28 +276,28 @@ export default function Home() {
                 unoptimized
               />
               <div className="absolute inset-0 z-10 flex items-end">
-                <div className="max-w-7xl mx-auto px-4 w-full pb-14">
+                <div className="max-w-7xl mx-auto px-4 w-full pb-8">
                   <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="max-w-xl"
+                    className="max-w-xl ml-4"
                   >
-                    <h3 className="text-xl md:text-2xl font-bold text-[#FFFFFF] mb-1">
+                    <h3 className="text-2xl md:text-3xl font-bold text-[#FFFFFF] mb-2">
                       IWKL
                     </h3>
-                    <p className="text-[#E7E7E7] text-[10px] md:text-xs mb-3">
+                    <p className="text-[#E7E7E7] text-xs md:text-sm mb-4">
                       INDIAN WOMEN'S KABADDI LEAGUE
                     </p>
                     <Link href="/iwkl">
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex items-center gap-2 bg-gradient-to-r from-[#FF5A00] to-[#FF6A00] text-[#FFFFFF] font-bold px-2 py-1 rounded-full shadow-lg shadow-[#FF5A00]/30 hover:shadow-[#FF5A00]/50 transition-all duration-300 text-[10px]"
+                        className="flex items-center gap-2 bg-gradient-to-r from-[#FF5A00] to-[#FF6A00] text-[#FFFFFF] font-bold px-3 py-1.5 rounded-full shadow-lg shadow-[#FF5A00]/30 hover:shadow-[#FF5A00]/50 transition-all duration-300 text-xs"
                       >
                         EXPLORE NOW
-                        <ArrowRight size={10} className="group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
                       </motion.button>
                     </Link>
                   </motion.div>

@@ -52,7 +52,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className={!isClient ? "flex items-center justify-between h-16 lg:h-20" : (isMobileDesktopSite ? "flex items-center justify-between h-10" : "flex items-center justify-between h-16 lg:h-20")}>
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image 
@@ -60,17 +60,17 @@ export default function Navbar() {
               alt="Spocor sports" 
               width={250} 
               height={100}
-              className={!isClient ? "h-12 lg:h-20 w-auto object-contain" : (isMobileDesktopSite ? "h-8 w-auto object-contain" : "h-12 lg:h-20 w-auto object-contain")}
+              className={!isClient ? "h-12 lg:h-20 w-auto object-contain" : (isMobileDesktopSite ? "h-6 w-auto object-contain" : "h-12 lg:h-20 w-auto object-contain")}
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className={!isClient ? "hidden lg:flex items-center gap-6 lg:gap-8" : (isActualMobile && !isMobileDesktopSite ? "hidden" : (isMobileDesktopSite ? "flex items-center gap-2" : "flex items-center gap-6 lg:gap-8"))}>
+          <div className={!isClient ? "hidden lg:flex items-center gap-6 lg:gap-8" : (isActualMobile && !isMobileDesktopSite ? "hidden" : (isMobileDesktopSite ? "flex items-center gap-1" : "flex items-center gap-6 lg:gap-8"))}>
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className={!isClient ? "text-[#E7E7E7] hover:text-[#FF5A00] transition-colors text-xs lg:text-sm font-medium" : (isMobileDesktopSite ? "text-[#E7E7E7] hover:text-[#FF5A00] transition-colors text-[10px] font-medium" : "text-[#E7E7E7] hover:text-[#FF5A00] transition-colors text-xs lg:text-sm font-medium")}
+                className={!isClient ? "text-[#E7E7E7] hover:text-[#FF5A00] transition-colors text-xs lg:text-sm font-medium" : (isMobileDesktopSite ? "text-[#E7E7E7] hover:text-[#FF5A00] transition-colors text-[8px] font-medium" : "text-[#E7E7E7] hover:text-[#FF5A00] transition-colors text-xs lg:text-sm font-medium")}
               >
                 {link.name}
               </Link>
@@ -78,7 +78,7 @@ export default function Navbar() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={!isClient ? "bg-[#FF5A00] text-[#FFFFFF] px-4 lg:px-6 py-2 lg:py-2.5 rounded-full text-xs lg:text-sm font-semibold hover:bg-[#FF6A00] transition-colors" : (isMobileDesktopSite ? "bg-[#FF5A00] text-[#FFFFFF] px-2 py-1 rounded-full text-[10px] font-semibold hover:bg-[#FF6A00] transition-colors" : "bg-[#FF5A00] text-[#FFFFFF] px-4 lg:px-6 py-2 lg:py-2.5 rounded-full text-xs lg:text-sm font-semibold hover:bg-[#FF6A00] transition-colors")}
+              className={!isClient ? "bg-[#FF5A00] text-[#FFFFFF] px-4 lg:px-6 py-2 lg:py-2.5 rounded-full text-xs lg:text-sm font-semibold hover:bg-[#FF6A00] transition-colors" : (isMobileDesktopSite ? "bg-[#FF5A00] text-[#FFFFFF] px-1.5 py-0.5 rounded-full text-[8px] font-semibold hover:bg-[#FF6A00] transition-colors" : "bg-[#FF5A00] text-[#FFFFFF] px-4 lg:px-6 py-2 lg:py-2.5 rounded-full text-xs lg:text-sm font-semibold hover:bg-[#FF6A00] transition-colors")}
             >
               JOIN THE MOVEMENT
             </motion.button>

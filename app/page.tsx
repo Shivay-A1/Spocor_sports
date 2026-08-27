@@ -334,25 +334,25 @@ export default function Home() {
                 unoptimized
               />
               <div className="absolute inset-0 z-10 flex items-start">
-                <div className="max-w-7xl mx-auto px-4 w-full pt-8">
+                <div className="max-w-7xl mx-auto px-4 w-full pt-16">
                   <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="max-w-xl ml-12"
+                    className="max-w-xl ml-20"
                   >
-                    <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#FFFFFF] mb-3">
+                    <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#FFFFFF] mb-3">
                       IWKL
                     </h3>
-                    <p className="text-[#E7E7E7] text-base md:text-lg mb-4">
+                    <p className="text-[#E7E7E7] text-lg md:text-xl mb-4">
                       INDIAN WOMEN'S KABADDI LEAGUE
                     </p>
                     <Link href="/iwkl">
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex items-center gap-2 bg-gradient-to-r from-[#FF5A00] to-[#FF6A00] text-[#FFFFFF] font-bold px-6 py-3 rounded-full shadow-lg shadow-[#FF5A00]/30 hover:shadow-[#FF5A00]/50 transition-all duration-300 text-base md:text-lg"
+                        className="flex items-center gap-2 bg-gradient-to-r from-[#FF5A00] to-[#FF6A00] text-[#FFFFFF] font-bold px-6 py-3 rounded-full shadow-lg shadow-[#FF5A00]/30 hover:shadow-[#FF5A00]/50 transition-all duration-300 text-lg md:text-xl"
                       >
                         EXPLORE NOW
                         <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

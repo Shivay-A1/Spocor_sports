@@ -285,14 +285,14 @@ export default function Home() {
                 priority
                 unoptimized
               />
-              <div className="absolute inset-0 z-10 flex items-end">
-                <div className="max-w-7xl mx-auto px-4 w-full pb-6">
+              <div className="absolute inset-0 z-10 flex items-center">
+                <div className="max-w-7xl mx-auto px-4 w-full pb-4">
                   <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="max-w-xl ml-4 md:ml-8"
+                    className="max-w-xl ml-2 md:ml-4"
                   >
                     <h3 className="text-lg md:text-xl lg:text-3xl font-bold text-[#FFFFFF] mb-1">
                       IWKL

@@ -17,8 +17,18 @@ import Navbar from '@/components/Navbar';
 import Image from 'next/image';
 import ParticlesOverlay from '@/components/ParticlesOverlay';
 import Link from 'next/link';
+import { isMobileDevice } from '@/lib/deviceDetection';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
+  const [isActualMobile, setIsActualMobile] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+    setIsActualMobile(isMobileDevice());
+  }, []);
+
   const leagues = [
     {
       title: 'IWKL',
@@ -38,7 +48,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative w-full lg:h-screen bg-[#050505]">
         {/* Mobile Hero */}
-        <div className="lg:hidden relative w-full h-[60vh]">
+        <div className={!isClient ? "lg:hidden relative w-full h-[60vh]" : (isActualMobile ? "relative w-full h-[60vh]" : "hidden relative w-full h-[60vh]")}>
           <div className="absolute inset-0 z-0">
             <Image
               src="/banner.png"
@@ -122,7 +132,7 @@ export default function Home() {
         </div>
 
         {/* Desktop Hero */}
-        <div className="hidden lg:block relative w-full h-screen">
+        <div className={!isClient ? "hidden lg:block relative w-full h-screen" : (isActualMobile ? "hidden relative w-full h-screen" : "hidden lg:block relative w-full h-screen")}>
           <div className="absolute inset-0 z-0">
             <Image
               src="/banner.png"
@@ -265,7 +275,7 @@ export default function Home() {
         {/* Banner Background */}
         <div className="relative w-full">
           {/* Mobile Banner */}
-          <div className="lg:hidden relative w-full">
+          <div className={!isClient ? "lg:hidden relative w-full" : (isActualMobile ? "relative w-full" : "hidden relative w-full")}>
             <div className="relative w-full aspect-[16/9]">
               <Image
                 src="/new-banner.png"
@@ -275,14 +285,14 @@ export default function Home() {
                 priority
                 unoptimized
               />
-              <div className="absolute inset-0 z-10 flex items-end">
-                <div className="max-w-7xl mx-auto px-4 w-full pb-6">
+              <div className="absolute inset-0 z-10 flex items-center">
+                <div className="max-w-7xl mx-auto px-4 w-full">
                   <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="max-w-xl ml-2"
+                    className="max-w-xl ml-4 md:ml-8"
                   >
                     <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#FFFFFF] mb-2">
                       IWKL
@@ -307,7 +317,7 @@ export default function Home() {
           </div>
 
           {/* Desktop Banner */}
-          <div className="hidden lg:block relative w-full h-[80vh]">
+          <div className={!isClient ? "hidden lg:block relative w-full h-[80vh]" : (isActualMobile ? "hidden relative w-full h-[80vh]" : "hidden lg:block relative w-full h-[80vh]")}>
             <div className="absolute inset-0 z-0">
               <Image
                 src="/new-banner.png"

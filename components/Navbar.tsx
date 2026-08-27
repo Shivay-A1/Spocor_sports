@@ -5,10 +5,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { isMobileDevice } from '@/lib/deviceDetection';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isActualMobile, setIsActualMobile] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+    setIsActualMobile(isMobileDevice());
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,7 +59,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-6 lg:gap-8">
+          <div className={!isClient ? "hidden lg:flex items-center gap-6 lg:gap-8" : (isActualMobile ? "hidden" : "hidden lg:flex items-center gap-6 lg:gap-8")}>
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -73,7 +81,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden text-[#FFFFFF]"
+            className={!isClient ? "lg:hidden text-[#FFFFFF]" : (isActualMobile ? "block text-[#FFFFFF]" : "lg:hidden text-[#FFFFFF]")}
           >
             {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>

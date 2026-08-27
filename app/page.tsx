@@ -22,11 +22,17 @@ import { useState, useEffect } from 'react';
 
 export default function Home() {
   const [isActualMobile, setIsActualMobile] = useState(false);
+  const [isMobileDesktopSite, setIsMobileDesktopSite] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
-    setIsActualMobile(isMobileDevice());
+    const isMobile = isMobileDevice();
+    setIsActualMobile(isMobile);
+    // Check if mobile device with desktop viewport (Desktop Site mode)
+    if (isMobile && window.innerWidth >= 1024) {
+      setIsMobileDesktopSite(true);
+    }
   }, []);
 
   const leagues = [
@@ -48,7 +54,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative w-full lg:h-screen bg-[#050505]">
         {/* Mobile Hero */}
-        <div className={!isClient ? "lg:hidden relative w-full h-[60vh]" : (isActualMobile ? "relative w-full h-[60vh]" : "hidden relative w-full h-[60vh]")}>
+        <div className={!isClient ? "lg:hidden relative w-full h-[60vh]" : (isActualMobile && !isMobileDesktopSite ? "relative w-full h-[60vh]" : "hidden relative w-full h-[60vh]")}>
           <div className="absolute inset-0 z-0">
             <Image
               src="/banner.png"
@@ -132,7 +138,7 @@ export default function Home() {
         </div>
 
         {/* Desktop Hero */}
-        <div className={!isClient ? "hidden lg:block relative w-full h-screen" : (isActualMobile ? "hidden relative w-full h-screen" : "hidden lg:block relative w-full h-screen")}>
+        <div className={!isClient ? "hidden lg:block relative w-full h-screen" : (isActualMobile && !isMobileDesktopSite ? "hidden relative w-full h-screen" : "hidden lg:block relative w-full h-screen")}>
           <div className="absolute inset-0 z-0">
             <Image
               src="/banner.png"
@@ -275,7 +281,7 @@ export default function Home() {
         {/* Banner Background */}
         <div className="relative w-full">
           {/* Mobile Banner */}
-          <div className={!isClient ? "lg:hidden relative w-full" : (isActualMobile ? "relative w-full" : "hidden relative w-full")}>
+          <div className={!isClient ? "lg:hidden relative w-full" : (isActualMobile && !isMobileDesktopSite ? "relative w-full" : "hidden relative w-full")}>
             <div className="relative w-full aspect-[16/9]">
               <Image
                 src="/new-banner.png"
@@ -316,8 +322,50 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Mobile Desktop Site Banner */}
+          <div className={!isClient ? "hidden relative w-full" : (isMobileDesktopSite ? "relative w-full" : "hidden relative w-full")}>
+            <div className="relative w-full aspect-[16/9]">
+              <Image
+                src="/new-banner.png"
+                alt="Leagues Banner"
+                fill
+                className="object-contain"
+                priority
+                unoptimized
+              />
+              <div className="absolute inset-0 z-10 flex items-center">
+                <div className="max-w-7xl mx-auto px-4 w-full">
+                  <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    className="max-w-xl ml-8"
+                  >
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#FFFFFF] mb-2">
+                      IWKL
+                    </h3>
+                    <p className="text-[#E7E7E7] text-sm md:text-base mb-3">
+                      INDIAN WOMEN'S KABADDI LEAGUE
+                    </p>
+                    <Link href="/iwkl">
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex items-center gap-2 bg-gradient-to-r from-[#FF5A00] to-[#FF6A00] text-[#FFFFFF] font-bold px-4 py-2 rounded-full shadow-lg shadow-[#FF5A00]/30 hover:shadow-[#FF5A00]/50 transition-all duration-300 text-sm md:text-base"
+                      >
+                        EXPLORE NOW
+                        <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                      </motion.button>
+                    </Link>
+                  </motion.div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Desktop Banner */}
-          <div className={!isClient ? "hidden lg:block relative w-full h-[80vh]" : (isActualMobile ? "hidden relative w-full h-[80vh]" : "hidden lg:block relative w-full h-[80vh]")}>
+          <div className={!isClient ? "hidden lg:block relative w-full h-[80vh]" : (isActualMobile && !isMobileDesktopSite ? "hidden relative w-full h-[80vh]" : "hidden lg:block relative w-full h-[80vh]")}>
             <div className="absolute inset-0 z-0">
               <Image
                 src="/new-banner.png"

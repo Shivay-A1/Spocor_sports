@@ -11,11 +11,17 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isActualMobile, setIsActualMobile] = useState(false);
+  const [isMobileDesktopSite, setIsMobileDesktopSite] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
-    setIsActualMobile(isMobileDevice());
+    const isMobile = isMobileDevice();
+    setIsActualMobile(isMobile);
+    // Check if mobile device with desktop viewport (Desktop Site mode)
+    if (isMobile && window.innerWidth >= 1024) {
+      setIsMobileDesktopSite(true);
+    }
   }, []);
 
   useEffect(() => {
@@ -59,7 +65,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className={!isClient ? "hidden lg:flex items-center gap-6 lg:gap-8" : (isActualMobile ? "hidden" : "flex items-center gap-6 lg:gap-8")}>
+          <div className={!isClient ? "hidden lg:flex items-center gap-6 lg:gap-8" : (isActualMobile && !isMobileDesktopSite ? "hidden" : "flex items-center gap-6 lg:gap-8")}>
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -81,7 +87,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={!isClient ? "lg:hidden text-[#FFFFFF]" : (isActualMobile ? "block text-[#FFFFFF]" : "hidden text-[#FFFFFF]")}
+            className={!isClient ? "lg:hidden text-[#FFFFFF]" : (isActualMobile && !isMobileDesktopSite ? "block text-[#FFFFFF]" : "hidden text-[#FFFFFF]")}
           >
             {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -95,7 +101,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className={!isClient ? "lg:hidden bg-[#050505] border-t border-[#121212]" : (isActualMobile ? "bg-[#050505] border-t border-[#121212]" : "hidden bg-[#050505] border-t border-[#121212]")}
+            className={!isClient ? "lg:hidden bg-[#050505] border-t border-[#121212]" : (isActualMobile && !isMobileDesktopSite ? "bg-[#050505] border-t border-[#121212]" : "hidden bg-[#050505] border-t border-[#121212]")}
           >
             <div className="px-4 lg:px-6 py-3 lg:py-4 space-y-3 lg:space-y-4">
               {navLinks.map((link) => (

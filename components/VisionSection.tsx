@@ -8,17 +8,23 @@ import { useState, useEffect } from 'react';
 
 export default function VisionSection() {
   const [isActualMobile, setIsActualMobile] = useState(false);
+  const [isMobileDesktopSite, setIsMobileDesktopSite] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
-    setIsActualMobile(isMobileDevice());
+    const isMobile = isMobileDevice();
+    setIsActualMobile(isMobile);
+    // Check if mobile device with desktop viewport (Desktop Site mode)
+    if (isMobile && window.innerWidth >= 1024) {
+      setIsMobileDesktopSite(true);
+    }
   }, []);
 
   return (
     <section className="relative lg:h-screen py-6 lg:py-12 bg-[#050505]">
       {/* Mobile Banner */}
-      <div className={!isClient ? "lg:hidden relative w-full" : (isActualMobile ? "relative w-full" : "hidden relative w-full")}>
+      <div className={!isClient ? "lg:hidden relative w-full" : (isActualMobile && !isMobileDesktopSite ? "relative w-full" : "hidden relative w-full")}>
         <div className="relative w-full aspect-[16/9]">
           <Image
             src="/iwkl-banner.png"
@@ -66,7 +72,7 @@ export default function VisionSection() {
       </div>
 
       {/* Desktop Banner */}
-      <div className={!isClient ? "hidden lg:block relative w-full h-screen" : (isActualMobile ? "hidden relative w-full h-screen" : "hidden lg:block relative w-full h-screen")}>
+      <div className={!isClient ? "hidden lg:block relative w-full h-screen" : (isActualMobile && !isMobileDesktopSite ? "hidden relative w-full h-screen" : "hidden lg:block relative w-full h-screen")}>
         <div className="absolute inset-0 z-0">
           <Image
             src="/iwkl-banner.png"

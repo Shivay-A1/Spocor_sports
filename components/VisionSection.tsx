@@ -25,7 +25,7 @@ export default function VisionSection() {
           </div>
           
           <div className="absolute inset-0 z-10 flex items-start">
-            <div className="w-full px-4 pt-8">
+            <div className="w-full px-4 pt-10">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}

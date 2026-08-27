@@ -25,7 +25,7 @@ export default function VisionSection() {
           </div>
           
           <div className="absolute inset-0 z-10 flex items-start">
-            <div className="w-full px-4 pt-10">
+            <div className="w-full px-4 pt-4">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -33,18 +33,18 @@ export default function VisionSection() {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="max-w-xl"
               >
-                <h3 className="text-[#FF5A00] font-semibold mb-2 uppercase tracking-wider text-sm">About Spacor Sports</h3>
-                <h2 className="text-xl md:text-2xl font-bold text-[#FFFFFF] mb-2 leading-tight">
+                <h3 className="text-[#FF5A00] font-semibold mb-1 uppercase tracking-wider text-[10px]">About Spacor Sports</h3>
+                <h2 className="text-base md:text-xl font-bold text-[#FFFFFF] mb-1 leading-tight">
                   WE DON'T JUST MANAGE SPORTS.
                 </h2>
-                <h2 className="text-xl md:text-2xl font-bold text-[#FF5A00] mb-3 leading-tight">
+                <h2 className="text-base md:text-xl font-bold text-[#FF5A00] mb-2 leading-tight">
                   WE TRANSFORM LIVES.
                 </h2>
-                <p className="text-[#E7E7E7] text-sm leading-relaxed mb-2">
+                <p className="text-[#E7E7E7] text-[10px] md:text-xs leading-relaxed mb-1">
                   Spacor Sports is building professional sports ecosystems that create opportunities for athletes, 
                   communities, partners and fans.
                 </p>
-                <p className="text-[#999999] text-xs leading-relaxed">
+                <p className="text-[#999999] text-[9px] md:text-[10px] leading-relaxed">
                   Through world-class leagues, innovative technology, and a commitment to excellence, we're 
                   redefining what sports can be — not just entertainment, but a vehicle for social change, 
                   economic growth, and human potential.

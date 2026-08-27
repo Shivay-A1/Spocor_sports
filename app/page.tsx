@@ -286,7 +286,7 @@ export default function Home() {
                 unoptimized
               />
               <div className="absolute inset-0 z-10 flex items-end">
-                <div className="max-w-7xl mx-auto px-4 w-full pb-6">
+                <div className="max-w-7xl mx-auto px-4 w-full pb-4">
                   <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}

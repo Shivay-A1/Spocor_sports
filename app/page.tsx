@@ -38,85 +38,85 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative w-full lg:h-screen bg-[#050505]">
         {/* Mobile Hero */}
-        <div className="lg:hidden relative w-full">
-          <div className="relative w-full aspect-[16/9]">
+        <div className="lg:hidden relative w-full h-[60vh]">
+          <div className="absolute inset-0 z-0">
             <Image
               src="/banner.png"
               alt="SPACOR SPORTS Banner"
               fill
-              className="object-cover"
+              className="object-cover object-center"
               priority
               unoptimized
             />
             <div className="absolute inset-0 bg-[#050505]/40" />
-            
-            <div className="absolute inset-0 z-5">
-              <ParticlesOverlay />
-            </div>
+          </div>
+          
+          <div className="absolute inset-0 z-5">
+            <ParticlesOverlay />
+          </div>
 
-            <div className="absolute inset-0 flex items-center z-10">
-              <div className="w-full px-4">
-                <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                  className="max-w-xl text-left"
+          <div className="absolute inset-0 flex items-center z-10">
+            <div className="w-full px-4">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                className="max-w-xl text-left"
+              >
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                  className="text-[#FF5A00] font-semibold mb-2 uppercase tracking-wider text-xs md:text-sm"
                 >
-                  <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-[#FF5A00] font-semibold mb-2 uppercase tracking-wider text-xs md:text-sm"
-                  >
-                    ONE VISION. LIMITLESS POSSIBILITIES.
-                  </motion.p>
+                  ONE VISION. LIMITLESS POSSIBILITIES.
+                </motion.p>
 
-                  <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-xl md:text-2xl lg:text-3xl font-bold text-[#FFFFFF] mb-2 leading-tight"
-                  >
-                    BUILDING THE FUTURE OF <span className="text-[#FF5A00]">SPORTS</span>
-                  </motion.h1>
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  className="text-xl md:text-2xl font-bold text-[#FFFFFF] mb-2 leading-tight"
+                >
+                  BUILDING THE FUTURE OF <span className="text-[#FF5A00]">SPORTS</span>
+                </motion.h1>
 
-                  <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-xs md:text-sm text-[#E7E7E7] mb-3 leading-relaxed"
-                  >
-                    Spacor Sports is dedicated to creating world-class leagues that inspire, empower and elevate athletes across the globe.
-                  </motion.p>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                  className="text-xs md:text-sm text-[#E7E7E7] mb-3 leading-relaxed"
+                >
+                  Spacor Sports is dedicated to creating world-class leagues that inspire, empower and elevate athletes across the globe.
+                </motion.p>
 
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
-                    className="flex flex-col gap-2"
-                  >
-                    <Link href="#leagues">
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="bg-[#FF5A00] text-[#FFFFFF] px-3 py-1.5 rounded-full font-semibold hover:bg-[#FF6A00] transition-colors text-xs md:text-sm"
-                      >
-                        EXPLORE OUR LEAGUES
-                      </motion.button>
-                    </Link>
-                    <Link href="/about">
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="bg-transparent border-2 border-[#FF5A00] text-[#FF5A00] px-3 py-1.5 rounded-full font-semibold hover:bg-[#FF5A00]/10 transition-colors flex items-center justify-center gap-2 text-xs md:text-sm"
-                      >
-                        ABOUT SPACOR
-                        <ArrowRight size={12} />
-                      </motion.button>
-                    </Link>
-                  </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                  className="flex flex-col gap-2"
+                >
+                  <Link href="#leagues">
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="bg-[#FF5A00] text-[#FFFFFF] px-3 py-1.5 rounded-full font-semibold hover:bg-[#FF6A00] transition-colors text-xs md:text-sm"
+                    >
+                      EXPLORE OUR LEAGUES
+                    </motion.button>
+                  </Link>
+                  <Link href="/about">
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="bg-transparent border-2 border-[#FF5A00] text-[#FF5A00] px-3 py-1.5 rounded-full font-semibold hover:bg-[#FF5A00]/10 transition-colors flex items-center justify-center gap-2 text-xs md:text-sm"
+                    >
+                      ABOUT SPACOR
+                      <ArrowRight size={12} />
+                    </motion.button>
+                  </Link>
                 </motion.div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -218,90 +218,6 @@ export default function Home() {
               />
             </div>
           </motion.div>
-        </div>
-
-        {/* Mobile Hero */}
-        <div className="lg:hidden relative w-full">
-          <div className="relative w-full aspect-[16/9]">
-            <Image
-              src="/banner.png"
-              alt="SPACOR SPORTS Banner"
-              fill
-              className="object-cover"
-              priority
-              unoptimized
-            />
-            <div className="absolute inset-0 bg-[#050505]/40" />
-            
-            <div className="absolute inset-0 z-5">
-              <ParticlesOverlay />
-            </div>
-
-            <div className="absolute inset-0 flex items-center z-10">
-              <div className="w-full px-4">
-                <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                  className="max-w-xl text-left"
-                >
-                  <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-[#FF5A00] font-semibold mb-2 uppercase tracking-wider text-xs md:text-sm"
-                  >
-                    ONE VISION. LIMITLESS POSSIBILITIES.
-                  </motion.p>
-
-                  <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-xl md:text-2xl lg:text-3xl font-bold text-[#FFFFFF] mb-2 leading-tight"
-                  >
-                    BUILDING THE FUTURE OF <span className="text-[#FF5A00]">SPORTS</span>
-                  </motion.h1>
-
-                  <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-xs md:text-sm text-[#E7E7E7] mb-3 leading-relaxed"
-                  >
-                    Spacor Sports is dedicated to creating world-class leagues that inspire, empower and elevate athletes across the globe.
-                  </motion.p>
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
-                    className="flex flex-col gap-2"
-                  >
-                    <Link href="#leagues">
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="bg-[#FF5A00] text-[#FFFFFF] px-3 py-1.5 rounded-full font-semibold hover:bg-[#FF6A00] transition-colors text-xs md:text-sm"
-                      >
-                        EXPLORE OUR LEAGUES
-                      </motion.button>
-                    </Link>
-                    <Link href="/about">
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="bg-transparent border-2 border-[#FF5A00] text-[#FF5A00] px-3 py-1.5 rounded-full font-semibold hover:bg-[#FF5A00]/10 transition-colors flex items-center justify-center gap-2 text-xs md:text-sm"
-                      >
-                        ABOUT SPACOR
-                        <ArrowRight size={12} />
-                      </motion.button>
-                    </Link>
-                  </motion.div>
-                </motion.div>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Scroll Indicator */}
